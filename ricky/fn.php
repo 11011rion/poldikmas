@@ -1,23 +1,29 @@
 <?php 
-
-
 function loadcss($plugin){
-	/*global $homepage;
+	global $homepage;
 	$css = '';
 	foreach ($plugin as $key => $value) {
 		switch ($value) {
 			case 'bootstrap':
-				$css.='
-					<link rel="stylesheet" href="'.$homepage.'plugin/bootstrap/dist/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
-				';
+				$css.='<link rel="stylesheet" href="'.$homepage.'plugin/bootstrap/dist/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">';
+				break;
+			case 'fontawesome':
+				$css.='<link rel="stylesheet" href="'.$homepage.'plugin/font-awesome-4.7.0/css/font-awesome.min.css">';
+				break;
+			case 'style':
+				$css.='<link rel="stylesheet" href="'.$homepage.'ricky/style.css">';
+				break;
+			case 'owlcarousel':
+				$css.='<link rel="stylesheet" href="'.$homepage.'plugin/owlcarousel/dist/assets/owl.carousel.min.css">';
 				break;
 			default:
 				break;
 		}
-	}*/
-	echo $css. "ASdas";
+	}
+	echo $css;
 }
 
+    	
  
 function loadjs($plugin){
 	global $homepage;
@@ -62,10 +68,8 @@ function loadjs($plugin){
 				<script type="text/javascript" src="'.$homepage.'js/chart.js"></script>
 				';
 				break;
-			case 'owl-carousel':
-				$js.='
-				<script type="text/javascript" src="'.$homepage.'vendors/owl-carousel/owl.carousel.min.js"></script>
-				';
+			case 'popper':
+				$js.='<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>';
 				break;
 			case 'fancybox':
 				$js.='
@@ -73,28 +77,9 @@ function loadjs($plugin){
 				<script type="text/javascript" src="'.$homepage.'vendors/fancybox-master/dist/a.js"></script>
 				';
 				break;
-			case 'froala':
+			case 'owlcarousel':
 				$js.='
-				<script type="text/javascript" src="'.$homepage.'vendors/froala_editor_2.6.5/js/froala_editor.min.js"></script>
-				<script type="text/javascript" src="'.$homepage.'vendors/froala_editor_2.6.5/js/froala_editor.pkgd.min.js"></script>
-				<script type="text/javascript" src="'.$homepage.'vendors/froala_editor_2.6.5/js/plugins/image.min.js"></script>
-				<script> 
-				$(function() { 
-  					$("#froala-editor").froalaEditor({
-	  					imageUploadURL: "a.php",
-						imageResize: false,
-						imageStyles: {
-				    		class1: "img-responsive"
-				    	},
-	        			imageUploadParams: {id: "my_editor"},
-	        			imageUploadMethod: "POST",
-	    				heightMin: 200,
-	    				toolbarButtons: [
-	      	      			"fullscreen", "bold", "italic", "underline",  "|", "fontFamily", "fontSize", "color", "paragraphStyle", "|", "paragraphFormat", "align", "formatOL", "formatUL", "quote", "-", "insertLink", "insertImage", "insertVideo", "insertFile", "insertTable", "|", "insertHR", "clearFormatting", "|",  "html", "|", "undo", "redo"
-	    				],
-  					})
-				});
-				</script>
+				<script src="'.$homepage.'plugin/owlcarousel/dist/owl.carousel.min.js"></script>
 				';
 				break;
 			case 'tag':
@@ -111,9 +96,7 @@ function loadjs($plugin){
 				';
 				break;
 			case 'jquery':
-				$js.='
-				<script src="'.$homepage.'vendors/jquery/dist/jquery.min.js"></script>
-				';
+				$js.='<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>';
 				break;
 			case 'select2':
 				$js.='
@@ -131,9 +114,7 @@ function loadjs($plugin){
 				';
 				break;
 			case 'bootstrap':
-				$js.='
-				<script src="'.$homepage.'vendors/bootstrap/dist/js/bootstrap.min.js"></script>
-				';
+				$js.='<script src="'.$homepage.'plugin/bootstrap/dist/js/bootstrap.min.js"></script>';
 				break;
 			case 'datatable':
 				$js.='
@@ -238,7 +219,10 @@ function loadjs($plugin){
 				break;
 		}
 	}
+
+
 	echo $js;
+
 }
 
 
